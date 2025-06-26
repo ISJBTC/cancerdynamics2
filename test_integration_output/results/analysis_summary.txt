@@ -1,0 +1,96 @@
+CANCER DYNAMICS RESEARCH - ANALYSIS SUMMARY
+============================================================
+Generated: 2025-06-26 20:11:23
+
+CONFIGURATION OVERVIEW
+------------------------------
+Alpha values tested: 21
+Alpha range: 0.0 to 2.0
+Derivative types: caputo, riemann_liouville, grunwald_letnikov, hilfer, gutan
+Initial conditions: 3 sets
+Time points: 41
+Cell types: Tumor, Immune, Memory, Stromal
+
+MODEL PERFORMANCE ANALYSIS
+------------------------------
+
+INTEGER MODEL:
+  Overall RMSE: 0.0266
+  Overall MAE:  0.0218
+  Overall R²:   1.0000
+  Cell-specific performance:
+    Tumor: RMSE=0.0353, MAE=0.0306, R²=0.9999
+    Immune: RMSE=0.0288, MAE=0.0248, R²=1.0000
+    Memory: RMSE=0.0215, MAE=0.0193, R²=0.9999
+    Stromal: RMSE=0.0171, MAE=0.0126, R²=1.0000
+
+FRACTIONAL MODEL:
+  Overall RMSE: 0.0239
+  Overall MAE:  0.0171
+  Overall R²:   1.0000
+  Cell-specific performance:
+    Tumor: RMSE=0.0318, MAE=0.0261, R²=0.9999
+    Immune: RMSE=0.0186, MAE=0.0152, R²=1.0000
+    Memory: RMSE=0.0293, MAE=0.0198, R²=0.9998
+    Stromal: RMSE=0.0085, MAE=0.0071, R²=1.0000
+
+ALPHA SENSITIVITY ANALYSIS
+------------------------------
+
+CAPUTO DERIVATIVE:
+  Tumor Cells:
+    Sensitivity: 0.0526
+    Optimal alpha:   1.5
+    Monotonicity: 1.0000
+    Correlation: -1.0000 (p=0.0000)
+  Immune Cells:
+    Sensitivity: 0.0291
+    Optimal alpha:   1.5
+    Monotonicity: 1.0000
+    Correlation: 1.0000 (p=0.0000)
+  Memory Cells:
+    Sensitivity: 0.0000
+    Optimal alpha:   0.5
+    Monotonicity: 0.0000
+    Correlation: nan (p=nan)
+  Stromal Cells:
+    Sensitivity: 0.0000
+    Optimal alpha:   0.5
+    Monotonicity: 0.0000
+    Correlation: nan (p=nan)
+
+DERIVATIVE TYPE COMPARISON
+------------------------------
+
+Alpha = 1.0:
+  Overall ranking: integer > fractional
+  Tumor best derivative: integer
+  Immune best derivative: integer
+  Memory best derivative: fractional
+  Stromal best derivative: integer
+
+STATISTICAL TEST RESULTS
+------------------------------
+
+MODEL_NAMES Tests:
+
+METRICS_COMPARISON Tests:
+
+STATISTICAL_TESTS Tests:
+
+KEY FINDINGS
+------------------------------
+1. Best performing model overall: fractional
+2. No statistically significant differences between models
+3. At α=1.0: integer derivative performs best
+
+RECOMMENDATIONS
+------------------------------
+1. Consider fractional model for primary analysis
+2. Optimal alpha values found - caputo: α=1.5
+3. Validate results with independent datasets
+4. Consider patient-specific parameter estimation
+5. Explore ensemble methods for improved robustness
+6. Investigate clinical correlation of model predictions
+7. Conduct sensitivity analysis on additional parameters
+

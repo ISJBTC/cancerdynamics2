@@ -1,0 +1,460 @@
+{
+  "experiment_metadata": {
+    "timestamp": "2025-06-26T20:11:23.706585",
+    "configuration": {
+      "alpha_range": [
+        0.0,
+        2.0
+      ],
+      "alpha_count": 21,
+      "derivative_types": [
+        "caputo",
+        "riemann_liouville",
+        "grunwald_letnikov",
+        "hilfer",
+        "gutan"
+      ],
+      "initial_conditions": 3,
+      "time_points": 41,
+      "cell_types": [
+        "Tumor",
+        "Immune",
+        "Memory",
+        "Stromal"
+      ]
+    }
+  },
+  "model_performance": {
+    "metrics": {
+      "integer": {
+        "overall": {
+          "rmse": 0.02659879264522603,
+          "mae": 0.021809981540645354,
+          "r2": 0.9999969624394384
+        },
+        "per_cell_type": {
+          "rmse": [
+            0.035275769894254606,
+            0.028816317243773065,
+            0.02151858328229531,
+            0.01709308553572669
+          ],
+          "mae": [
+            0.03058659983896622,
+            0.02479271025354184,
+            0.019269902263768145,
+            0.012590713806305205
+          ],
+          "r2": [
+            0.9998702320442922,
+            0.9999944878176983,
+            0.9998664943304664,
+            0.999998173532817
+          ]
+        }
+      },
+      "fractional": {
+        "overall": {
+          "rmse": 0.02392159331346648,
+          "mae": 0.017080495435868055,
+          "r2": 0.9999973809745862
+        },
+        "per_cell_type": {
+          "rmse": [
+            0.03181029252974498,
+            0.018632064033798183,
+            0.02927169364386631,
+            0.008549265281395197
+          ],
+          "mae": [
+            0.026146545844199648,
+            0.015238942729751,
+            0.019799007904155865,
+            0.007137485265365709
+          ],
+          "r2": [
+            0.9998651274422624,
+            0.9999969193412941,
+            0.9997682187849111,
+            0.9999994499836335
+          ]
+        }
+      }
+    },
+    "comparison": {
+      "model_names": [
+        "integer",
+        "fractional"
+      ],
+      "metrics_comparison": {
+        "rmse": {
+          "integer": [
+            0.035275769894254606,
+            0.028816317243773065,
+            0.02151858328229531,
+            0.01709308553572669
+          ],
+          "fractional": [
+            0.03181029252974498,
+            0.018632064033798183,
+            0.02927169364386631,
+            0.008549265281395197
+          ]
+        },
+        "mae": {
+          "integer": [
+            0.03058659983896622,
+            0.02479271025354184,
+            0.019269902263768145,
+            0.012590713806305205
+          ],
+          "fractional": [
+            0.026146545844199648,
+            0.015238942729751,
+            0.019799007904155865,
+            0.007137485265365709
+          ]
+        },
+        "r2": {
+          "integer": [
+            0.9998702320442922,
+            0.9999944878176983,
+            0.9998664943304664,
+            0.999998173532817
+          ],
+          "fractional": [
+            0.9998651274422624,
+            0.9999969193412941,
+            0.9997682187849111,
+            0.9999994499836335
+          ]
+        }
+      },
+      "statistical_tests": {
+        "rmse": {
+          "pairwise_tests": {
+            "integer_vs_fractional": {
+              "t_statistic": 0.8916694097916603,
+              "p_value": 0.43826278893541837,
+              "significant": "False",
+              "effect_size": 0.44173176583218704
+            }
+          }
+        },
+        "mae": {
+          "pairwise_tests": {
+            "integer_vs_fractional": {
+              "t_statistic": 2.282219592827124,
+              "p_value": 0.10671706023002808,
+              "significant": "False",
+              "effect_size": 0.6961801922372224
+            }
+          }
+        },
+        "r2": {
+          "pairwise_tests": {
+            "integer_vs_fractional": {
+              "t_statistic": 1.016706936629826,
+              "p_value": 0.3841515015469335,
+              "significant": "False",
+              "effect_size": 0.3031952415580089
+            }
+          }
+        }
+      }
+    },
+    "rankings": {
+      "by_rmse": [
+        "fractional",
+        "integer"
+      ],
+      "by_mae": [
+        "fractional",
+        "integer"
+      ],
+      "by_r2": [
+        "fractional",
+        "integer"
+      ],
+      "overall": [
+        "fractional",
+        "integer"
+      ]
+    }
+  },
+  "alpha_analysis": {
+    "caputo": {
+      "derivative_type": "caputo",
+      "alpha_values": [
+        0.5,
+        1.0,
+        1.5
+      ],
+      "cell_type_analysis": {
+        "Tumor": {
+          "final_values": [
+            42.88577574160135,
+            41.786140466175674,
+            40.68650519075
+          ],
+          "alpha_range": 1.0,
+          "value_range": 2.1992705508513524,
+          "relative_sensitivity": 0.05263157894724249,
+          "monotonicity": 1.0,
+          "optimal_alpha": 1.5,
+          "correlation": {
+            "coefficient": -1.0,
+            "p_value": 0.0,
+            "significant": "True"
+          }
+        },
+        "Immune": {
+          "final_values": [
+            45.16018907717346,
+            45.82758103397899,
+            46.494972990784504
+          ],
+          "alpha_range": 1.0,
+          "value_range": 1.3347839136110409,
+          "relative_sensitivity": 0.029126213592169506,
+          "monotonicity": 1.0,
+          "optimal_alpha": 1.5,
+          "correlation": {
+            "coefficient": 1.0,
+            "p_value": 0.0,
+            "significant": "True"
+          }
+        },
+        "Memory": {
+          "final_values": [
+            25.947793267642567,
+            25.947793267642567,
+            25.947793267642567
+          ],
+          "alpha_range": 1.0,
+          "value_range": 0.0,
+          "relative_sensitivity": 0.0,
+          "monotonicity": 0.0,
+          "optimal_alpha": 0.5,
+          "correlation": {
+            "coefficient": NaN,
+            "p_value": NaN,
+            "significant": false
+          }
+        },
+        "Stromal": {
+          "final_values": [
+            68.27172518819224,
+            68.27172518819224,
+            68.27172518819224
+          ],
+          "alpha_range": 1.0,
+          "value_range": 0.0,
+          "relative_sensitivity": 0.0,
+          "monotonicity": 0.0,
+          "optimal_alpha": 0.5,
+          "correlation": {
+            "coefficient": NaN,
+            "p_value": NaN,
+            "significant": false
+          }
+        }
+      }
+    }
+  },
+  "derivative_comparison": {
+    "1.0": {
+      "alpha_value": 1.0,
+      "derivative_types": [
+        "integer",
+        "fractional"
+      ],
+      "cell_type_analysis": {
+        "Tumor": {
+          "final_values": {
+            "integer": 42.56034447672924,
+            "fractional": 43.985411017027026
+          },
+          "best_derivative": "integer",
+          "value_range": 1.4250665402977845,
+          "coefficient_of_variation": 0.016466047724284998
+        },
+        "Immune": {
+          "final_values": {
+            "integer": 51.03997255828282,
+            "fractional": 44.492797120367946
+          },
+          "best_derivative": "integer",
+          "value_range": 6.547175437914873,
+          "coefficient_of_variation": 0.06853329449072071
+        },
+        "Memory": {
+          "final_values": {
+            "integer": 25.57394290706863,
+            "fractional": 25.947793267642567
+          },
+          "best_derivative": "fractional",
+          "value_range": 0.37385036057393606,
+          "coefficient_of_variation": 0.007256167752281311
+        },
+        "Stromal": {
+          "final_values": {
+            "integer": 72.06138365151364,
+            "fractional": 68.27172518819224
+          },
+          "best_derivative": "integer",
+          "value_range": 3.789658463321402,
+          "coefficient_of_variation": 0.027004735337579543
+        }
+      },
+      "overall_comparison": {
+        "ranking": [
+          "integer",
+          "fractional"
+        ],
+        "scores": {
+          "integer": 8.479628081553578,
+          "fractional": 0.5073861033409202
+        }
+      }
+    }
+  },
+  "statistical_tests": {
+    "model_names": [
+      "integer",
+      "fractional"
+    ],
+    "metrics_comparison": {
+      "rmse": {
+        "integer": [
+          0.035275769894254606,
+          0.028816317243773065,
+          0.02151858328229531,
+          0.01709308553572669
+        ],
+        "fractional": [
+          0.03181029252974498,
+          0.018632064033798183,
+          0.02927169364386631,
+          0.008549265281395197
+        ]
+      },
+      "mae": {
+        "integer": [
+          0.03058659983896622,
+          0.02479271025354184,
+          0.019269902263768145,
+          0.012590713806305205
+        ],
+        "fractional": [
+          0.026146545844199648,
+          0.015238942729751,
+          0.019799007904155865,
+          0.007137485265365709
+        ]
+      },
+      "r2": {
+        "integer": [
+          0.9998702320442922,
+          0.9999944878176983,
+          0.9998664943304664,
+          0.999998173532817
+        ],
+        "fractional": [
+          0.9998651274422624,
+          0.9999969193412941,
+          0.9997682187849111,
+          0.9999994499836335
+        ]
+      }
+    },
+    "statistical_tests": {
+      "rmse": {
+        "pairwise_tests": {
+          "integer_vs_fractional": {
+            "t_statistic": 0.8916694097916603,
+            "p_value": 0.43826278893541837,
+            "significant": "False",
+            "effect_size": 0.44173176583218704
+          }
+        }
+      },
+      "mae": {
+        "pairwise_tests": {
+          "integer_vs_fractional": {
+            "t_statistic": 2.282219592827124,
+            "p_value": 0.10671706023002808,
+            "significant": "False",
+            "effect_size": 0.6961801922372224
+          }
+        }
+      },
+      "r2": {
+        "pairwise_tests": {
+          "integer_vs_fractional": {
+            "t_statistic": 1.016706936629826,
+            "p_value": 0.3841515015469335,
+            "significant": "False",
+            "effect_size": 0.3031952415580089
+          }
+        }
+      }
+    }
+  },
+  "key_findings": [
+    "Best performing model overall: fractional",
+    "No statistically significant differences between models",
+    "At \u03b1=1.0: integer derivative performs best"
+  ],
+  "recommendations": [
+    "Consider fractional model for primary analysis",
+    "Optimal alpha values found - caputo: \u03b1=1.5",
+    "Validate results with independent datasets",
+    "Consider patient-specific parameter estimation",
+    "Explore ensemble methods for improved robustness",
+    "Investigate clinical correlation of model predictions",
+    "Conduct sensitivity analysis on additional parameters"
+  ],
+  "summary_statistics": {
+    "experiment_overview": {
+      "total_models": 0,
+      "alpha_values_tested": 0,
+      "derivative_types": 0,
+      "cell_types_analyzed": 4
+    },
+    "performance_summary": {},
+    "key_findings": [
+      "Alpha parameter sensitivity analysis shows varied responses"
+    ],
+    "recommendations": [
+      "Use cross-validation for robust model selection",
+      "Consider ensemble methods for improved predictions",
+      "Investigate parameter ranges more thoroughly",
+      "Validate results with experimental data"
+    ]
+  },
+  "metadata": {
+    "generation_time": "2025-06-26T20:11:23.720367",
+    "configuration": {
+      "alpha_range": [
+        0.0,
+        2.0
+      ],
+      "alpha_count": 21,
+      "derivative_types": [
+        "caputo",
+        "riemann_liouville",
+        "grunwald_letnikov",
+        "hilfer",
+        "gutan"
+      ],
+      "cell_labels": [
+        "Tumor",
+        "Immune",
+        "Memory",
+        "Stromal"
+      ],
+      "time_points": 41
+    }
+  }
+}
