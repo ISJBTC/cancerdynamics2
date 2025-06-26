@@ -206,7 +206,7 @@ class ComparisonPlotter:
             # Add value labels on bars
             for bar, value in zip(bars, metrics):
                 height = bar.get_height()
-                plt.annotate(f'{value:.3f}',
+                plt.annotate(f'{float(value):.3f}' if isinstance(value, (int, float)) else f'{value}',
                            xy=(bar.get_x() + bar.get_width()/2, height),
                            xytext=(0, 2),
                            textcoords="offset points",
