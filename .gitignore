@@ -1,0 +1,50 @@
+# Output directories
+*_output/
+results/
+plots/
+plots_output/
+research_output/
+demo_output/
+basic_output/
+alpha_output/
+neural_output/
+full_output/
+custom_output/
+superiority_results/
+test_*_output/
+
+# Specific output files
+*.png
+*.jpg
+*.pdf
+*.html
+*.tex
+*.csv
+*.json
+analysis_*.txt
+*_summary.*
+*_report.*
+performance_*.tex
+
+# Model files
+*.pth
+*.pkl
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
