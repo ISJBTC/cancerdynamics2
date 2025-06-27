@@ -13,8 +13,7 @@ class ModelConfig:
             'caputo',
             'riemann_liouville',
             'grunwald_letnikov',
-            'hilfer',
-            'gutan'
+            'hilfer'
         ]
 
         # Simulation parameters from original code

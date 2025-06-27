@@ -141,12 +141,12 @@ def create_fractional_derivative(derivative_type, alpha=1.0):
     Returns:
         BaseFractionalDerivative: Instance of the requested derivative type
     """
+    # Updated derivative map without gutan
     derivative_map = {
         'caputo': 'CaputoDerivative',
         'riemann_liouville': 'RiemannLiouvilleDerivative', 
         'grunwald_letnikov': 'GrunwaldLetnikovDerivative',
-        'hilfer': 'HilferDerivative',
-        'gutan': 'GutanDerivative'
+        'hilfer': 'HilferDerivative'
     }
     
     if derivative_type not in derivative_map:
@@ -164,4 +164,17 @@ def create_fractional_derivative(derivative_type, alpha=1.0):
         return derivative_class(alpha)
     except ImportError as e:
         raise ImportError(f"Could not import {derivative_type}: {e}")
- 
+
+
+def get_available_derivatives():
+    """Get list of available fractional derivative types"""
+    return ['caputo', 'riemann_liouville', 'grunwald_letnikov', 'hilfer']
+
+
+def validate_derivative_type(derivative_type):
+    """Validate if derivative type is available"""
+    available = get_available_derivatives()
+    if derivative_type not in available:
+        raise ValueError(f"Derivative type '{derivative_type}' not available. "
+                        f"Available types: {', '.join(available)}")
+    return True
